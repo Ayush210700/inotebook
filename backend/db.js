@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 
-const mongoURI = "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false"
+// const mongoURI = "mongodb+srv://localhost:27017/inotebook"
+const mongoURI = "mongodb+srv://demo:demo@atlascluster.xmypo6s.mongodb.net/?retryWrites=true&w=majority"
 
-const connectToMongo = ()=>{
-    mongoose.connect(mongoURI, ()=>{
+mongoose.set("strictQuery", false);
+
+const connectToMongo = () => {
+    mongoose.connect(mongoURI, () => {
         console.log("Connected to Mongo Successfully");
     })
 }
